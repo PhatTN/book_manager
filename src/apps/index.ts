@@ -1,6 +1,7 @@
+/* tslint:disable:ordered-imports */
+import "reflect-metadata";
 import { Server } from "Apps/server";
 import { AppContainer } from "Injection/appContainer";
-import "reflect-metadata";
 
 const appContainer = new AppContainer();
 appContainer.inject();

@@ -12,6 +12,13 @@ const TYPES = {
 
   // Validators
   IdValidator: Symbol.for("IdValidator"),
+
+  // Books
+  BookDbGateway: Symbol.for("BookDbGateway"),
+  BookRepository: Symbol.for("BookRepository"),
+  AddNewBookUseCase: Symbol.for("AddNewBookUseCase"),
+  GetAllBooksUseCase: Symbol.for("GetAllBooksUseCase"),
+  BookRouter: Symbol.for("BookRouter"),
 };
 
 export { TYPES };

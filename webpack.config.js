@@ -3,7 +3,7 @@ const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   // entry is where, say, your app starts - it can be called main.ts, index.ts, app.ts, whatever
-  entry: "./src/apps/api/index.ts",
+  entry: "./src/apps/index.ts",
   // This forces webpack not to compile TypeScript for one time, but to stay running, watch for file changes in project directory and re-compile if needed
   watch: false,
   // Is needed to have in compiled output imports Node.JS can understand. Quick search gives you more info

@@ -5,6 +5,7 @@ export class SystemMessage {
   public static readonly RESOURCE_NOT_FOUND_ERROR = "Resource not found!";
   public static readonly UNAUTHORIZED_ERROR =
     "Unauthorized: Access is denied due to invalid credentials.";
+  public static readonly NON_EXISTING_RESOURCE = "Non existing resouces";
 
   // Validator
   public static readonly INVALID_PROVIDED_ID = "Invalid provided Id";

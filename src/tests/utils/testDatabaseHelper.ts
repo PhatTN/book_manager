@@ -32,11 +32,11 @@ export class TestDatabaseHelperImpl implements TestDatabaseHelper {
   }
 
   public async dropAllTables(): Promise<void> {
-    await this.dropTableSafety(DatabaseTables.TABLE_USERS);
+    await this.dropTableSafety(DatabaseTables.TABLE_BOOKS);
   }
 
   public async deleteAllData(): Promise<void> {
-    await this.deleteAllTableData(DatabaseTables.TABLE_USERS);
+    await this.deleteAllTableData(DatabaseTables.TABLE_BOOKS);
   }
 
   private async cleanMigrationTable(): Promise<void> {

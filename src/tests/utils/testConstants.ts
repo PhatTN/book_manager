@@ -1,7 +1,6 @@
 export class TestConstants {
   public static readonly MOCK_CURRENT_TIME: string = "2018-08-28T00:00:00.000Z";
   public static readonly ID: string = "b98d335d-2a12-4dae-8cc0-ca8874ce9ce0";
-  public static readonly KEYWORD: string = "keyword";
   public static readonly COMMON_NAME: string = "Common name";
   public static readonly COMMON_DESCRIPTION: string = "Common description for testing";
   public static readonly CREATED_AT = new Date("2018-03-12T12:00:00.000Z");
@@ -16,4 +15,9 @@ export class TestConstants {
   public static readonly DELETED_AT = new Date("2017-08-04T04:00:00.000Z");
   public static readonly DELETED_AT_FROM = "2017-01-02T11:00:00.000Z";
   public static readonly DELETED_AT_TO = "2019-02-05T23:00:00.000Z";
+
+  public static readonly BOOK_TITLE: string = "book title";
+  public static readonly BOOK_DESCRIPTION: string = "book description";
+  public static readonly BOOK_ISBN: string = "0987654321";
+  public static readonly BOOK_AUTHOR_NAME: string = "book author name";
 }

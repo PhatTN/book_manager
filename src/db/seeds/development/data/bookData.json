@@ -1,0 +1,38 @@
+[
+  {
+    "book_id": "949bd85d-3621-43d8-99ea-ffb6bee0631f",
+    "title": "Lean In",
+    "description": "We help women achieve their ambitions and work to create an equal world.",
+    "isbn": "9781789138",
+    "author_name": "Sheryl Sandberg",
+    "created_at": "2018-09-03T17:24:51.141Z",
+    "updated_at": "2018-09-03T17:24:51.141Z"
+  },
+  {
+    "book_id": "4292b5c8-3e31-4d37-be94-1032a2b05635",
+    "title": "Hands-On System Programming with Linux",
+    "description": "The Linux OS and its embedded and server applications are critical components of today’s software infrastructure in a decentralized, networked universe. The industry's demand for proficient Linux developers is only rising with time. Hands-On System Programming with Linux gives you a solid theoretical base and practical industry-relevant descriptions, and covers the Linux system programming domain. It delves into the art and science of Linux application programming— system architecture, process memory and management, signaling, timers, pthreads, and file IO.",
+    "isbn": "9781788998",
+    "author_name": "Kaiwan N Billimoria",
+    "created_at": "2018-09-03T17:24:51.141Z",
+    "updated_at": "2018-09-03T17:24:51.141Z"
+  },
+  {
+    "book_id": "5bfd2880-dc42-4e83-89c4-7a49cad558fd",
+    "title": "Effective DevOps and Development with Docker",
+    "description": "Companies that adopt DevOps and use Docker are leading the industry in almost all metrics. DevOps and developers need to use Docker in a way that supports and encourages good development and best practices. If you wish to get beyond just learning the Docker tool, then look no further because this video course will be your companion and show you how to make it work for your teams and processes.",
+    "isbn": "9781788994",
+    "author_name": "James Quigley",
+    "created_at": "2018-09-03T17:24:51.141Z",
+    "updated_at": "2018-09-03T17:24:51.141Z"
+  },
+  {
+    "book_id": "ec260b96-6aa5-4307-a5c2-c485f04e8371",
+    "title": "Serverless Web Development on AWS Using Lambda",
+    "description": "If you are a developer and want to dive right into developing serverless web applications, or a DevOps professional keen to learn how to manage serverless web applications, then this video is a must-have guide.",
+    "isbn": "9781788628",
+    "author_name": "Harish Garg",
+    "created_at": "2018-09-03T17:24:51.141Z",
+    "updated_at": "2018-09-03T17:24:51.141Z"
+  }
+]

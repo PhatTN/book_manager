@@ -9,7 +9,7 @@ services:
       - db_data:/var/lib/postgres
     environment:
       POSTGRES_USER: devblock
-      POSTGRES_PASSWORD: Abc12345
+      POSTGRES_PASSWORD: Abc12345_dev
       POSTGRES_DB: book_manager_dev
       POSTGRES_INITDB_WALDIR: /logs
     ports:
@@ -28,7 +28,7 @@ services:
       PSQL_HOST: db
       PSQL_PORT: 5432
       PSQL_USER: devblock
-      PSQL_PASSWORD: Abc12345
+      PSQL_PASSWORD: Abc12345_dev
       PSQL_DATABASE: book_manager_dev
     ports:
       - "8080:3000"

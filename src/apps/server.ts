@@ -1,5 +1,6 @@
 /* tslint:disable:import-name */
 import errorHandlerMiddleware from "Common/middlewares/errorHandlerMiddleware";
+import { Router } from "Common/router";
 import { ServerConfig } from "Configs/appConfig";
 import http from "http";
 import { TYPES } from "Injection/types";
@@ -18,13 +19,13 @@ export class Server {
     this.serverConfig = appContainer.get<ServerConfig>(TYPES.ServerConfig);
 
     // Router initialize
-    // const homeRouter = appContainer.get<Router>(TYPES.HomeRouter);
+    const bookRouter = appContainer.get<Router>(TYPES.BookRouter);
 
     this.app = new Koa();
     this.app.use(bodyParser());
     this.app.use(errorHandlerMiddleware(this.logger));
 
-    // this.app.use(homeRouter.routes());
+    this.app.use(bookRouter.routes());
   }
 
   public start(): http.Server {

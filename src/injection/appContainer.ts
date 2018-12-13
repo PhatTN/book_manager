@@ -1,8 +1,13 @@
+import { BookRouter } from "Apps/bookRouter";
+import { Router } from "Common/router";
 import { apiConfig } from "Configs/api";
 import { PostgresConfig, ServerConfig } from "Configs/appConfig";
+import { BookDbGateway, BookDbGatewayImpl } from "Gateways/bookDbGateway";
 import { TYPES } from "Injection/types";
 import { Container } from "inversify";
 import "reflect-metadata";
+import { BookRepository, BookRepositoryImpl } from "Repositories/bookRepository";
+import { GetAllBooksUseCase, GetAllBooksUseCaseImpl } from "Usecases/book/getAllBooksUseCase";
 import { IdValidator, IdValidatorImpl } from "Usecases/validator/idValidator";
 import { DateTimeUtils, DateTimeUtilsImpl } from "Utils/dateTimeUtils";
 import { KnextProvider, KnextProviderImpl } from "Utils/knexProvider";
@@ -24,6 +29,12 @@ export class AppContainer extends Container {
 
     // Validators
     this.provideIdValidator();
+
+    // Books
+    this.provideBookDbGateway();
+    this.provideBookRepository();
+    this.provideGetAllBooksUseCase();
+    this.provideBookRouter();
   }
 
   protected provideNodeEnvironment() {
@@ -65,6 +76,28 @@ export class AppContainer extends Container {
   protected provideIdValidator() {
     this.bind<IdValidator>(TYPES.IdValidator)
       .to(IdValidatorImpl)
+      .inSingletonScope();
+  }
+
+  protected provideBookDbGateway() {
+    this.bind<BookDbGateway>(TYPES.BookDbGateway)
+      .to(BookDbGatewayImpl)
+      .inSingletonScope();
+  }
+
+  protected provideBookRepository() {
+    this.bind<BookRepository>(TYPES.BookRepository)
+      .to(BookRepositoryImpl)
+      .inSingletonScope();
+  }
+  protected provideGetAllBooksUseCase() {
+    this.bind<GetAllBooksUseCase>(TYPES.GetAllBooksUseCase)
+      .to(GetAllBooksUseCaseImpl)
+      .inSingletonScope();
+  }
+  protected provideBookRouter() {
+    this.bind<Router>(TYPES.BookRouter)
+      .to(BookRouter)
       .inSingletonScope();
   }
 }
