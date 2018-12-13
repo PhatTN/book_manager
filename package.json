@@ -1,0 +1,76 @@
+{
+  "name": "book_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "build": "npx webpack --config webpack.config.js",
+    "serve": "node dist/apps/api/index.js",
+    "test": "NODE_ENV=test npx jest --runInBand --detectOpenHandles --forceExit --bail",
+    "test:unit": "NODE_ENV=test npx jest unit",
+    "test:integration": "NODE_ENV=test npx jest int --runInBand --detectOpenHandles --forceExit --bail",
+    "compile": "tsc -p ."
+  },
+  "keywords": [],
+  "author": "Phat Tran",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/joi": "^13.4.0",
+    "@types/knex": "^0.14.14",
+    "@types/knex-postgis": "^0.2.2",
+    "@types/koa": "^2.0.45",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-router": "^7.0.28",
+    "@types/lodash": "^4.14.109",
+    "@types/mockdate": "^2.0.0",
+    "@types/node": "^10.1.2",
+    "@types/pg": "^7.4.9",
+    "@types/supertest": "^2.0.5",
+    "@types/winston": "^2.3.9",
+    "jest": "^23.0.0",
+    "mockdate": "^2.0.2",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0",
+    "ts-jest": "^22.4.6",
+    "ts-loader": "^5.2.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "inversify": "^4.13.0",
+    "joi": "^13.4.0",
+    "knex": "^0.14.6",
+    "knex-postgis": "^0.7.0",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "npm": "^6.4.1",
+    "pg": "^7.4.3",
+    "reflect-metadata": "^0.1.12",
+    "uuid": "^3.3.2",
+    "winston": "^3.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  db:
+    image: mdillon/postgis
+    restart: always
+    command: postgres -c log_statement=all -c logging_collector=on -c log_destination=stderr
+    volumes:
+      - db_data:/var/lib/postgres
+    environment:
+      POSTGRES_USER: devblock
+      POSTGRES_PASSWORD: Abc12345_test
+      POSTGRES_DB: book_manager_test
+      POSTGRES_INITDB_WALDIR: /logs
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
