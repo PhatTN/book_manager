@@ -7,6 +7,7 @@ import { TYPES } from "Injection/types";
 import { Container } from "inversify";
 import "reflect-metadata";
 import { BookRepository, BookRepositoryImpl } from "Repositories/bookRepository";
+import { AddNewBookUseCase, AddNewBookUseCaseImpl } from "Usecases/book/addNewBookUseCase";
 import { GetAllBooksUseCase, GetAllBooksUseCaseImpl } from "Usecases/book/getAllBooksUseCase";
 import { IdValidator, IdValidatorImpl } from "Usecases/validator/idValidator";
 import { DateTimeUtils, DateTimeUtilsImpl } from "Utils/dateTimeUtils";
@@ -34,6 +35,7 @@ export class AppContainer extends Container {
     this.provideBookDbGateway();
     this.provideBookRepository();
     this.provideGetAllBooksUseCase();
+    this.provideAddNewBookUseCase();
     this.provideBookRouter();
   }
 
@@ -90,11 +92,19 @@ export class AppContainer extends Container {
       .to(BookRepositoryImpl)
       .inSingletonScope();
   }
+
   protected provideGetAllBooksUseCase() {
     this.bind<GetAllBooksUseCase>(TYPES.GetAllBooksUseCase)
       .to(GetAllBooksUseCaseImpl)
       .inSingletonScope();
   }
+
+  protected provideAddNewBookUseCase() {
+    this.bind<AddNewBookUseCase>(TYPES.AddNewBookUseCase)
+      .to(AddNewBookUseCaseImpl)
+      .inSingletonScope();
+  }
+
   protected provideBookRouter() {
     this.bind<Router>(TYPES.BookRouter)
       .to(BookRouter)
