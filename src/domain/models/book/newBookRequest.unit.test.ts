@@ -85,7 +85,7 @@ describe("NewBookRequest", () => {
   it("unable to new instance when passing invalid 'title'", () => {
     try {
       expect.hasAssertions();
-      const request = new NewBookRequest("a", VALID_DESCRIPTION, VALID_ISBN, VALID_AUTHOR_NAME);
+      const request = new NewBookRequest("abc", VALID_DESCRIPTION, VALID_ISBN, VALID_AUTHOR_NAME);
     } catch (error) {
       expect(error).toBeInstanceOf(IllegalParameterError);
       expect(error.message).toEqual(expect.stringContaining("title"));
