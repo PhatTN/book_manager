@@ -11,7 +11,7 @@ export abstract class Router {
   public abstract routes(): IMiddleware;
 
   protected buildSuccessArrayBodyWithoutPaging<T>(data: T[]): SuccessArrayResponseWithoutPaging<T> {
-    return { data };
+    return { xxx: data };
   }
 
   protected handlePublicRoute(
@@ -28,5 +28,5 @@ interface SuccessResponse<T> {
 }
 
 interface SuccessArrayResponseWithoutPaging<T> {
-  data: T[];
+  xxx: T[];
 }
