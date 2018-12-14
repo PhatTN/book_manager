@@ -24,10 +24,7 @@ export class WinstonLogger implements Logger {
         options = {
           level: "info",
           format: format.json(),
-          transports: [
-            new transports.File({ filename: "error.log", level: "error" }),
-            new transports.File({ filename: "combined.log" }),
-          ],
+          transports: [new transports.Console()],
         };
         break;
       }
@@ -35,10 +32,7 @@ export class WinstonLogger implements Logger {
         options = {
           level: "info",
           format: format.simple(),
-          transports: [
-            new transports.File({ filename: "test_error.log", level: "error" }),
-            new transports.File({ filename: "test_combined.log" }),
-          ],
+          transports: [new transports.Console()],
         };
         break;
       }
@@ -46,10 +40,7 @@ export class WinstonLogger implements Logger {
         options = {
           level: "info",
           format: format.simple(),
-          transports: [
-            new transports.File({ filename: "staging_error.log", level: "error" }),
-            new transports.File({ filename: "staging_combined.log" }),
-          ],
+          transports: [new transports.Console()],
         };
         break;
       }

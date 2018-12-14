@@ -36,6 +36,22 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
+      deploy:
+        docker:
+          - image: buildpack-deps:trusty
+        steps:
+          - add_ssh_keys:
+              fingerprints:
+                - "a4:ad:5f:97:13:bc:52:f2:3c:7f:7d:df:37:a1:cd:df"
+          - checkout
+          - run:
+              name: Add Dokku to known_hosts
+              command: |
+                ssh-keyscan -H 68.183.190.179 >> ~/.ssh/known_hosts
+                ssh-keyscan -H bookmanager.ga >> ~/.ssh/known_hosts
+          - run:
+              name: Deploy to Dokku
+              command: git push -f dokku@68.183.190.179:book-manager master
 
 workflows:
   version: 2
@@ -43,3 +59,9 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
