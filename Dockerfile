@@ -26,4 +26,4 @@ RUN npm install --only-production
 WORKDIR /opt/app
 COPY --from=build /opt/app/dist ./
 
-CMD ["npx", "nodemon", "-V", "index.js"]
+CMD ["npx", "node", "index.js"]

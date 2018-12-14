@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+      - image: circleci/postgres:10.6
+        environment:
+          POSTGRES_USER: devblock
+          POSTGRES_DB: book_manager_test
+          POSTGRES_PASSWORD: Abc12345_test
+
+    working_directory: ~/book_manager
+
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: npm i
+
+      - save_cache:
+          paths:
+            - ./dependencies
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: run tests
+          command: make test.unit
+
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+workflows:
+  version: 2
+
+  build-deploy:
+    jobs:
+      - build
