@@ -25,7 +25,7 @@ describe("AddNewBookUseCase", () => {
 
     const response = await usecase.execute({} as any);
 
-    expect(response).toEqual(true);
+    expect(response).toEqual(false);
   });
 
   it("insert new book fail with invalid data", async () => {
